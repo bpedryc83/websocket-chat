@@ -1,0 +1,31 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\bpedr_pje\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Users\bpedr_pje\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\bpedr_pje\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;%NVM_HOME%;%NVM_SYMLINK%;C:\Program Files\PuTTY;C:\Users\bpedr_pje\AppData\Local\Microsoft\WindowsApps;C:\Users\bpedr_pje\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\bpedr_pje\AppData\Roaming\npm;C:\Users\bpedr_pje\AppData\Local\GitHubDesktop\bin;C:\Users\bpedr_pje\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  16.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  SyntaxError: C:\Projects\websocket-chat\package.json: Unexpected end of JSON input
+      at JSON.parse (<anonymous>)
+      at C:\Users\bpedr_pje\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\bpedr_pje\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\bpedr_pje\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
+
+npm manifest: 
+  
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
