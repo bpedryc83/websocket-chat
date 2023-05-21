@@ -103,6 +103,9 @@ p {
 .message--self .message__content {
   background: #3498db;
 }
+.announcement {
+  background-color: orange;
+}
 
 .show {
   display: block;

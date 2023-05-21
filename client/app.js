@@ -6,13 +6,19 @@
   const userNameInput = document.getElementById('username');
   const messageContentInput = document.getElementById('message-content');
 
-  let userName;
+  const socket = io();
 
-  function login(clickedElement) {
+  let userName;
+  socket.on('message', ({ author, content }) => addMessage(author, content));
+  socket.on('newUser', (userName) => addAnnouncement(userName, ' has joined the conversation!'));
+  socket.on('userLeft', (userName) => addAnnouncement(userName, ' has left the conversation :('));
+  
+  function login() {
     if (userNameInput.value) {
       userName = userNameInput.value;
       loginForm.classList.remove('show');
       messageSection.classList.add('show');
+      socket.emit('author', userName);
     }
     else {
       alert("Please input your login");
@@ -20,8 +26,10 @@
   }
   
   function sendMessage() {
-    if (messageContentInput.value) {
-      addMessage(userName, messageContentInput.value);
+    const messageContent = messageContentInput.value;    
+    if (messageContent) {
+      addMessage(userName, messageContent);
+      socket.emit('message', { author: userName, content: messageContent });
       messageContentInput.value = '';
     }
     else {
@@ -51,6 +59,22 @@
     }
     newMessageHTML.append(messageHeader, messageContent);
 
+    messageList.append(newMessageHTML);
+  }
+
+  function addAnnouncement(user, content) {
+    const messageHeader = document.createElement('h3');
+    messageHeader.classList.add('message__author');
+    messageHeader.textContent = 'chatBot';
+
+    const messageContent = document.createElement('div');
+    messageContent.classList.add('message__content', 'announcement');
+    messageContent.textContent = user + content;
+
+    const newMessageHTML = document.createElement('li');
+    newMessageHTML.classList.add('message', 'message--received');
+
+    newMessageHTML.append(messageHeader, messageContent);
     messageList.append(newMessageHTML);
   }
 
